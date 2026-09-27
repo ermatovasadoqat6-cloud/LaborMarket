@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, .font-heading {
+    font-family: var(--font-heading);
+  }
+}
+
+/* Neumorphic utilities for Light and Dark modes */
+.neu-flat-light {
+  background: #eef2f7;
+  box-shadow: 18px 18px 45px #c7d1df, -18px -18px 45px #ffffff;
+}
+
+.neu-flat-dark {
+  background: #0f172a;
+  box-shadow: 18px 18px 45px #070b14, -15px -15px 40px #182442;
+}
+
+.neu-inset-light {
+  background: #eef2f7;
+  box-shadow: inset 4px 4px 8px #cbd5e1, inset -4px -4px 8px #ffffff;
+}
+
+.neu-inset-dark {
+  background: #0b1120;
+  box-shadow: inset 4px 4px 8px #04070d, inset -3px -3px 7px #17233d;
+}
+
+.neu-btn-light {
+  background: #eef2f7;
+  box-shadow: 6px 6px 14px #cbd5e1, -6px -6px 14px #ffffff;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-btn-light:hover {
+  box-shadow: 4px 4px 10px #cbd5e1, -4px -4px 10px #ffffff;
+}
+
+.neu-btn-light:active {
+  box-shadow: inset 3px 3px 6px #cbd5e1, inset -3px -3px 6px #ffffff;
+}
+
+.neu-btn-dark {
+  background: #111a30;
+  box-shadow: 6px 6px 15px #060913, -6px -6px 15px #1c2a4d;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.neu-btn-dark:hover {
+  box-shadow: 4px 4px 10px #060913, -4px -4px 10px #1c2a4d;
+}
+
+.neu-btn-dark:active {
+  box-shadow: inset 3px 3px 7px #050810, inset -3px -3px 7px #192644;
+}
+
+/* Glassmorphism effects */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.35);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.6);
+}
+

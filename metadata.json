@@ -1,0 +1,6 @@
+{
+  "name": "LaborMarket - Zamonaviy Ish E'lonlari Portali",
+  "description": "Ish beruvchilar va ish izlovchilar uchun zamonaviy ish e'lonlari portali, AI yordamchi, neumorphic dizayn va interaktiv shaxsiy kabinetlar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

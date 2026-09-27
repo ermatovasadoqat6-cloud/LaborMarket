@@ -1,0 +1,98 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile for employer or job seeker",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "avatar": { "type": "string" },
+        "role": { "type": "string", "enum": ["employer", "job_seeker"] },
+        "phone": { "type": "string" },
+        "telegram": { "type": "string" },
+        "companyName": { "type": "string" },
+        "companyLogo": { "type": "string" },
+        "companyIndustry": { "type": "string" },
+        "companyLocation": { "type": "string" },
+        "companyBio": { "type": "string" },
+        "companyWebsite": { "type": "string" },
+        "title": { "type": "string" },
+        "bio": { "type": "string" },
+        "skills": { "type": "array" },
+        "experience": { "type": "array" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "name", "email", "role"]
+    },
+    "Job": {
+      "title": "Job",
+      "description": "A job opening posted by an employer",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "employerId": { "type": "string" },
+        "companyName": { "type": "string" },
+        "companyLogo": { "type": "string" },
+        "companyLocation": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "location": { "type": "string" },
+        "jobType": { "type": "string" },
+        "salaryMin": { "type": "number" },
+        "salaryMax": { "type": "number" },
+        "salaryCurrency": { "type": "string" },
+        "salaryPeriod": { "type": "string" },
+        "experienceLevel": { "type": "string" },
+        "description": { "type": "string" },
+        "requirements": { "type": "array" },
+        "benefits": { "type": "array" },
+        "postedDate": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "closed"] },
+        "viewsCount": { "type": "number" },
+        "applicantsCount": { "type": "number" },
+        "isFeatured": { "type": "boolean" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["employerId", "companyName", "title", "category", "location", "jobType", "salaryMin"]
+    },
+    "Application": {
+      "title": "Application",
+      "description": "Job application submitted by a job seeker",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "jobId": { "type": "string" },
+        "jobTitle": { "type": "string" },
+        "companyName": { "type": "string" },
+        "candidateId": { "type": "string" },
+        "candidateName": { "type": "string" },
+        "candidateEmail": { "type": "string" },
+        "candidatePhone": { "type": "string" },
+        "candidateTelegram": { "type": "string" },
+        "candidateTitle": { "type": "string" },
+        "coverLetter": { "type": "string" },
+        "resumeSummary": { "type": "string" },
+        "status": { "type": "string", "enum": ["pending", "reviewing", "interview", "accepted", "rejected"] },
+        "appliedAt": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["jobId", "candidateId", "candidateName", "candidateEmail", "candidatePhone"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User account documents"
+    },
+    "/jobs/{jobId}": {
+      "schema": "Job",
+      "description": "Job openings posted by employers"
+    },
+    "/applications/{applicationId}": {
+      "schema": "Application",
+      "description": "Job applications submitted by candidates"
+    }
+  }
+}
